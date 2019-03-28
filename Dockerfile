@@ -1,6 +1,6 @@
-FROM mirantis/kubeadm-dind-cluster:bare-v4
+FROM wk88/kubeadm-dind-cluster:bare-v4
 
-LABEL mirantis.kubeadm_dind_cluster_final=1
+LABEL wk88.kubeadm_dind_cluster_final=1
 
 # the following args should be set for derived images
 

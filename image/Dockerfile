@@ -35,7 +35,7 @@ FROM k8s.gcr.io/debian-base-amd64:0.4.1
 
 STOPSIGNAL SIGRTMIN+3
 
-LABEL mirantis.kubeadm_dind_cluster=1
+LABEL wk88.kubeadm_dind_cluster=1
 
 ENV ARCH amd64
 ENV CRICTL_VERSION=v1.12.0

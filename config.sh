@@ -19,9 +19,9 @@ NUM_NODES=${NUM_NODES:-2}
 # KUBEADM_DIND_LOCAL=
 
 # Image name base for k-d-c
-DIND_IMAGE_BASE="${DIND_IMAGE_BASE:-mirantis/kubeadm-dind-cluster}"
+DIND_IMAGE_BASE="${DIND_IMAGE_BASE:-wk88/kubeadm-dind-cluster}"
 
-# Specify DIND image to use. mirantis/kubeadm-dind-cluster:local
+# Specify DIND image to use. wk88/kubeadm-dind-cluster:local
 # is the one that is built locally using build/build-local.sh
 DIND_IMAGE="${DIND_IMAGE:-${DIND_IMAGE_BASE}:local}"
 

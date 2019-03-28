@@ -20,7 +20,7 @@ prereqs_machine: &prereqs_machine
 
 env: &env
   DOCKER_VERSION: "17.03.0-ce"
-  IMAGE_NAME: "mirantis/kubeadm-dind-cluster"
+  IMAGE_NAME: "wk88/kubeadm-dind-cluster"
   PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.kubeadm-dind-cluster
   # prevent dind-cluster*.sh from trying to pull the image
   # during the tests
@@ -390,7 +390,7 @@ jobs:
           docker login -u "${DOCKER_USER}" -p "${DOCKER_PASS}"
           docker images \
                  --format '{{ .Repository }}:{{ .Tag }}' \
-                 --filter=label=mirantis.kubeadm_dind_cluster_final |
+                 --filter=label=wk88.kubeadm_dind_cluster_final |
               while read image; do
             echo >&2 "*** Pushing: ${image}"
             docker push "${image}"

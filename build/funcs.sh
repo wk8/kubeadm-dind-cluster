@@ -16,13 +16,13 @@
 source "${DIND_ROOT}/build/buildconf.sh"
 
 IMAGE_CACHE_DIR="${IMAGE_CACHE_DIR:-}"
-IMAGE_NAME="${IMAGE_NAME:-mirantis/kubeadm-dind-cluster}"
+IMAGE_NAME="${IMAGE_NAME:-wk88/kubeadm-dind-cluster}"
 
 KUBEADM_URL="${KUBEADM_URL:-}"
 HYPERKUBE_URL="${HYPERKUBE_URL:-}"
 KUBEADM_SHA1=${KUBEADM_SHA1:-}
 HYPERKUBE_SHA1=${HYPERKUBE_SHA1:-}
-GH_RELEASE_USER="kubernetes-sigs"
+GH_RELEASE_USER="wk8"
 GH_REPO="kubeadm-dind-cluster"
 GH_RELEASE_TEST_USER="ivan4th"
 
@@ -36,9 +36,9 @@ GH_RELEASE_TEST_USER="ivan4th"
 #                 gcr.io/google_containers/etcd-amd64:2.2.5
 #                 gcr.io/google_containers/etcd:2.2.1)
 
-hypokube_base_image=mirantis/hypokube:base
+hypokube_base_image=wk88/hypokube:base
 image_version_suffix=v4
-image_name="mirantis/kubeadm-dind-cluster"
+image_name="wk88/kubeadm-dind-cluster"
 BARE_IMAGE_NAME="${image_name}:bare-${image_version_suffix}"
 
 function dind::step {
@@ -113,7 +113,7 @@ function dind::build-image {
     dind::build-hypokube
     images+=("${hypokube_base_image}")
 
-    if [[ ${KUBECTL_LINUX_URL} =~ /(v[0-9.]*)/ ]]; then
+    if [[ ${KUBECTL_LINUX_URL} =~ /(v[0-9]+\.[0-9]+(\.[0-9]+)?) ]]; then
         kubectl_version="${BASH_REMATCH[1]}"
     else
         echo >&2 "can't get kubectl version from url: ${KUBECTL_LINUX_URL}"
