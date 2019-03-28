@@ -17,11 +17,15 @@ set -o errexit
 set -o nounset
 set -o pipefail
 set -o errtrace
-VERSIONS=(1.10.13 1.11.7 1.12.5 1.13.3)
+VERSIONS=(1.10.13 1.11.7 1.12.5 1.13.3 1.15.0)
 
 first=1
 for version in ${VERSIONS[@]}; do
   base_url="https://storage.googleapis.com/kubernetes-release/release/v${version}/bin"
+  if [[ "$version" == '1.15.0' ]]; then
+    base_url='https://s3.amazonaws.com/jrouge/kubernetes-release/release/v1.15.0-dev-a3f531f75909578e7134919fc53a626b1650e332/bin'
+  fi
+
   linux_url="${base_url}/linux/amd64"
   darwin_url="${base_url}/darwin/amd64"
   if [[ ${first} ]]; then

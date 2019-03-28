@@ -304,7 +304,7 @@ fi
 # To get around that limitation, you can set the cluster ID, in addition to the
 # DIND_LABEL, and optionally, change the NAT64_V4_SUBNET_PREFIX value.
 #
-DEFAULT_DIND_LABEL='mirantis.kubeadm_dind_cluster_runtime'
+DEFAULT_DIND_LABEL='wk88.kubeadm_dind_cluster_runtime'
 if [[ -z ${DIND_LABEL+x} ]]; then  # No legacy DIND_LABEL set
   if [[ -z ${CLUSTER_ID+x} ]]; then  # No cluster ID set
     DIND_LABEL=${DEFAULT_DIND_LABEL}  # Single cluster mode
@@ -483,12 +483,12 @@ for pod_cidr in "${pod_net_cidrs[@]}"; do
   fi
 done
 
-DIND_IMAGE_BASE="${DIND_IMAGE_BASE:-mirantis/kubeadm-dind-cluster}"
+DIND_IMAGE_BASE="${DIND_IMAGE_BASE:-wk88/kubeadm-dind-cluster}"
 if [[ ${DIND_COMMIT:-} ]]; then
   if [[ ${DIND_COMMIT} = current ]]; then
     DIND_COMMIT="$(cd "${DIND_ROOT}"; git rev-parse HEAD)"
   fi
-  DIND_K8S_VERSION="${DIND_K8S_VERSION:-v1.13}"
+  DIND_K8S_VERSION="${DIND_K8S_VERSION:-v1.15}"
   DIND_IMAGE="${DIND_IMAGE_BASE}:${DIND_COMMIT}-${DIND_K8S_VERSION}"
 else
   DIND_IMAGE="${DIND_IMAGE:-${DIND_IMAGE_BASE}:local}"
