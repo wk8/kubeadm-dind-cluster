@@ -255,7 +255,7 @@ that you build a new image using build/build-local.sh and then setting this
 env variable:
 
 ```
-export DIND_IMAGE==mirantis/kubeadm-dind-cluster:local
+export DIND_IMAGE==wk88/kubeadm-dind-cluster:local
 ```
 
 Just keep in mind, there are some parameters in double curly-brackets that
@@ -384,17 +384,17 @@ Example containers:
 ```shell
 $ docker ps  --format '{{ .ID }} - {{ .Names }} -- {{ .Labels }}'
 
-8178227e567c - kube-node-2 -- mirantis.kubeadm_dind_cluster=1,mirantis.kubeadm_dind_cluster_runtime=
-6ea1822303bf - kube-node-1 -- mirantis.kubeadm_dind_cluster=1,mirantis.kubeadm_dind_cluster_runtime=
-7bc6b28be0b4 - kube-master -- mirantis.kubeadm_dind_cluster=1,mirantis.kubeadm_dind_cluster_runtime=
+8178227e567c - kube-node-2 -- wk88.kubeadm_dind_cluster=1,wk88.kubeadm_dind_cluster_runtime=
+6ea1822303bf - kube-node-1 -- wk88.kubeadm_dind_cluster=1,wk88.kubeadm_dind_cluster_runtime=
+7bc6b28be0b4 - kube-master -- wk88.kubeadm_dind_cluster=1,wk88.kubeadm_dind_cluster_runtime=
 
-ce3fa6eaecfe - kube-node-2-cluster-10 -- cluster-10=,mirantis.kubeadm_dind_cluster=1
-12c18cf3edb7 - kube-node-1-cluster-10 -- cluster-10=,mirantis.kubeadm_dind_cluster=1
-963a6e7c1e40 - kube-master-cluster-10 -- cluster-10=,mirantis.kubeadm_dind_cluster=1
+ce3fa6eaecfe - kube-node-2-cluster-10 -- cluster-10=,wk88.kubeadm_dind_cluster=1
+12c18cf3edb7 - kube-node-1-cluster-10 -- cluster-10=,wk88.kubeadm_dind_cluster=1
+963a6e7c1e40 - kube-master-cluster-10 -- cluster-10=,wk88.kubeadm_dind_cluster=1
 
-b05926f06642 - kube-node-2-foo -- mirantis.kubeadm_dind_cluster=1,foo=
-ddb961f1cc95 - kube-node-1-foo -- mirantis.kubeadm_dind_cluster=1,foo=
-2efc46f9dafd - kube-master-foo -- foo=,mirantis.kubeadm_dind_cluster=1
+b05926f06642 - kube-node-2-foo -- wk88.kubeadm_dind_cluster=1,foo=
+ddb961f1cc95 - kube-node-1-foo -- wk88.kubeadm_dind_cluster=1,foo=
+2efc46f9dafd - kube-master-foo -- foo=,wk88.kubeadm_dind_cluster=1
 ```
 
 Example `kubectl` access:

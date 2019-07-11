@@ -25,7 +25,7 @@ set -eu
 set -o pipefail
 
 function test-case-multiple-instances {
-  local defaultLabel='mirantis.kubeadm_dind_cluster_runtime'
+  local defaultLabel='wk88.kubeadm_dind_cluster_runtime'
   local secondClusterID="20"
   local thirdClusterLabel="third"
   local d="./dind-cluster.sh"

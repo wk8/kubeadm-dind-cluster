@@ -56,7 +56,7 @@ export POD_NETWORK_CIDR="10.244.0.0/16"
 if [[ ${NOBUILD} ]]; then
   bash -x "${DIND_ROOT}"/dind-cluster.sh clean
 else
-  export DIND_IMAGE=mirantis/kubeadm-dind-cluster:local
+  export DIND_IMAGE=wk88/kubeadm-dind-cluster:local
 fi
 
 function test-cluster {

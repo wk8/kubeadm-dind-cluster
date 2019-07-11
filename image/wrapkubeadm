@@ -21,8 +21,8 @@ set -o errtrace
 HYPERKUBE_SOURCE="${HYPERKUBE_SOURCE:-keep://}"
 KUBEADM_SOURCE="${KUBEADM_SOURCE:-keep://}"
 
-hypokube_base_image="mirantis/hypokube:base"
-hypokube_final_image="mirantis/hypokube:final"
+hypokube_base_image="wk88/hypokube:base"
+hypokube_final_image="wk88/hypokube:final"
 build_src_dir="/go/src/k8s.io/kubernetes"
 binary_dir="/k8s"
 # FIXME: don't hardcode
@@ -177,7 +177,7 @@ function dind::ensure-binaries-and-hypokube {
     done
   fi
   if [[ ${DIND_CRI} = containerd ]]; then
-    docker image save mirantis/hypokube:final "${hypokube_extra_tags[@]}" |
+    docker image save wk88/hypokube:final "${hypokube_extra_tags[@]}" |
       ctr -n k8s.io images import -
   fi
 }
